@@ -18,14 +18,12 @@ package com.github.nscala_money.money
 
 import org.joda.money._
 
-import scala.collection.JavaConverters._
+import scala.jdk.CollectionConverters._
 import scala.math.BigDecimal.RoundingMode.RoundingMode
 
 object StaticMoney extends StaticMoney
 
 trait StaticMoney extends Conversions {
-
-  def nonNull(currency: CurrencyUnit, money: Money): Money = Money.nonNull(money, currency)
 
   def zero(currency: CurrencyUnit): Money = Money.zero(currency)
   def parse(str: String): Money = Money.parse(str)

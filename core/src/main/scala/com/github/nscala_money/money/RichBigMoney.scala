@@ -19,7 +19,7 @@ package com.github.nscala_money.money
 import com.github.nscala_money.EnrichedType
 import org.joda.money._
 
-import scala.collection.JavaConverters._
+import scala.jdk.CollectionConverters._
 import scala.math.BigDecimal.RoundingMode.RoundingMode
 
 class RichBigMoney(val underlying: BigMoney) extends Super with EnrichedType[BigMoney] with Conversions {

@@ -20,13 +20,13 @@ import java.util.{Locale, Currency}
 
 import org.joda.money._
 
-import scala.collection.JavaConverters._
+import scala.jdk.CollectionConverters._
 
 object StaticCurrencyUnit extends StaticCurrencyUnit
 
 trait StaticCurrencyUnit {
 
-  def registered: Seq[CurrencyUnit] = CurrencyUnit.registeredCurrencies().asScala
+  def registered: Seq[CurrencyUnit] = CurrencyUnit.registeredCurrencies().asScala.toSeq
 
   def register(currencyCode: String,
                numericCurrencyCode: Int,

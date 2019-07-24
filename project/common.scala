@@ -9,8 +9,8 @@ import Dependencies.commonDependencies
 
 object Common {
   val commonSettings: Seq[Def.Setting[_]] = Seq(
-    scalaVersion := "2.11.8",
-    crossScalaVersions := Seq("2.11.8"),
+    scalaVersion := "2.13.0",
+    crossScalaVersions := Seq("2.13.0"),
 
     initialCommands in console += "import com.github.nscala_money.money.Imports._\n",
 
@@ -48,8 +48,7 @@ object Common {
   def scalacOptionsVal(version: String): Seq[String] =
     Seq(
       9  -> Seq("-unchecked", "-deprecation"),
-      10 -> Seq("-feature", "-language:implicitConversions", "-language:higherKinds"),
-      11 -> Seq("-Ywarn-unused", "-Ywarn-unused-import")
+      10 -> Seq("-feature", "-language:implicitConversions", "-language:higherKinds")
     ).collect{
       case (m, opts) if minorVersion(version) >= m => opts
     }.flatten
